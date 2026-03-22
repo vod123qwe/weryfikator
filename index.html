@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WERYFIKATOR — Portal informacyjny z AI fact-checkingiem. Agregujemy newsy, weryfikujemy fakty, wykrywamy dezinformację.">
+  <title>WERYFIKATOR — Portal z AI Fact-Checkingiem</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span class="clock" id="clock">00:00:00</span>
+    <span class="last-update" id="last-update">Ost. aktualizacja: —</span>
+    <span class="article-count" id="article-count">Ładowanie...</span>
+    <button class="btn-refresh" id="btn-refresh">Odśwież</button>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="logo">
+      WERYFIKATOR<span class="live-dot"></span>
+    </div>
+    <nav>
+      <ul class="nav-pills" id="nav-pills">
+        <li class="nav-pill active" data-cat="all">Wszystkie</li>
+        <li class="nav-pill" data-cat="swiat">Świat</li>
+        <li class="nav-pill" data-cat="polska">Polska</li>
+        <li class="nav-pill" data-cat="europa">Europa</li>
+        <li class="nav-pill" data-cat="biznes">Biznes</li>
+        <li class="nav-pill" data-cat="technologia">Tech</li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">BREAKING</div>
+    <div class="ticker-track">
+      <div class="ticker-inner" id="ticker-inner">
+        <span class="ticker-item">Ładowanie nagłówków...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <div class="hero-row" id="hero-row"></div>
+    <div class="secondary-row" id="secondary-row"></div>
+    <div class="section-divider">Więcej wiadomości</div>
+    <div class="card-grid" id="card-grid"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;">
+      WERYFIKATOR &mdash; AI Fact-Checking Portal &mdash; Powered by <a href="https://groq.com" target="_blank" rel="noopener">Groq</a> &amp; LLaMA&nbsp;3
+      &mdash; Dane aktualizowane co 30 minut przez GitHub Actions
+    </span>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box" id="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Zamknij">&times;</button>
+      <div id="modal-image-wrap"></div>
+      <div class="modal-body">
+        <div class="modal-meta" id="modal-meta"></div>
+        <h1 class="modal-title" id="modal-title"></h1>
+        <div class="modal-sources-count" id="modal-sources-count"></div>
+        <div id="modal-verification"></div>
+        <div id="modal-fake-alert"></div>
+        <div id="modal-discrepancies"></div>
+        <div class="modal-content" id="modal-content"></div>
+        <div class="sources-section" id="modal-sources"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
